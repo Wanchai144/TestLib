@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">VROOM</string>
+    <string name="login_title">Sing in to continue</string>
+    <string name="login_text_email">Email</string>
+    <string name="login_hint_email">Enter your email</string>
+    <string name="login_hint_password">Enter your password</string>
+    <string name="login_text_password">Password</string>
+    <string name="login_text_forgot_password">Forgot password?</string>
+    <string name="login_text_sign_in">Sign In</string>
+    <string name="login_text_new_to_vroom">New to VROOM?</string>
+    <string name="login_text_register_now">Register now</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="home_nav_hello">Hello</string>
+
+    <string name="home_nav_login_or_register">Login/Register</string>
+    <string name="home_nav_sign_up">Sign up for better\n experience</string>
+    <string name="menu_plans_and_price"><![CDATA[Plane & Pricing]]></string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_settings_profile">Profile</string>
+    <string name="title_settings_displayname">Display name</string>
+    <string name="title_settings_conference">Conference</string>
+    <string name="title_settings_switch_audio">Start with audio muted</string>
+    <string name="title_settings_switch_video">Start with video muted</string>
+    <string name="title_settings_switch_battery_seving">Battery saving mode</string>
+    <string name="title_settings_legal">Legal</string>
+    <string name="title_settings_privacy">Privacy policy</string>
+    <string name="title_settings_term_condition"><![CDATA[Terms & Conditions]]></string>
+    <string name="title_settings_version">Version</string>
+    <string name="home_title_meet">Enter room name</string>
+    <string name="home_enter_room_name">touch here to enter room name</string>
+    <string name="home_discription_meet">Enter the name of the room you want to join. You may make a name up, just let the people you are meeting know it so that they enter the same name</string>
+    <string name="home_create_join">Create/Join</string>
+    <string name="home_menu_calendar">Calendar</string>
+    <string name="home_menu_recent">Recent</string>
+    <string name="power_by">Powered by</string>
+    <string name="dialog_title">Message</string>
+    <string name="message_logout">Logout</string>
+    <string name="title_text_today">Today</string>
+    <string name="title_text_yesterday">Yesterday</string>
+    <string name="title_text_earlier">Earlier</string>
+    <string name="message_add_event">Do you want to add a VROOM link to this event?</string>
+</resources>

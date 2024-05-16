@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">VROOM</string>
+    <string name="login_title">เข้าสู่ระบบ</string>
+    <string name="login_text_email">อีเมล</string>
+    <string name="login_hint_email">อีเมล</string>
+    <string name="login_hint_password">รหัสผ่าน</string>
+    <string name="login_text_password">รหัสผ่าน</string>
+    <string name="login_text_forgot_password">ลืมรหัสผ่าน?</string>
+    <string name="login_text_sign_in">เข้าสู่ระบบ</string>
+    <string name="login_text_new_to_vroom">เข้าใช้งาน Vroom ครั้งแรก?</string>
+    <string name="login_text_register_now">ลงทะเบียนเลย</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">ตั้งค่า</string>
+    <string name="menu_home">Home</string>
+    <string name="home_nav_hello">สวัสดี</string>
+
+    <string name="home_nav_login_or_register">เข้าสู่ระบบ/สมัครใช้งาน</string>
+    <string name="home_nav_sign_up">ลงทะเบียนใช้งานเพื่อ\n ประสบการณ์ที่มากกว่า</string>
+    <string name="menu_plans_and_price">ราคา</string>
+
+    <string name="menu_settings">ตั้งค่า</string>
+    <string name="title_settings">ตั้งค่า</string>
+    <string name="title_settings_profile">ประวัติผู้ใช้งาน</string>
+    <string name="title_settings_displayname">ชื่อ</string>
+    <string name="title_settings_conference">การประชุม</string>
+    <string name="title_settings_switch_audio">ปิดไมค์เมื่อเริ่มประชุมทุกครั้ง</string>
+    <string name="title_settings_switch_video">ปิดกล้องเมื่อเริ่มประชุมทุกครั้ง</string>
+    <string name="title_settings_switch_battery_seving">โหมดประหยัดพลังงาน</string>
+    <string name="title_settings_legal">เกี่ยวกับกฏหมาย</string>
+    <string name="title_settings_privacy">นโยบายคุ้มครองข้อมูลส่วนบุคคล</string>
+    <string name="title_settings_term_condition">ข้อกำหนดและเงื่อนไข</string>
+    <string name="title_settings_version">เวอร์ชั่น</string>
+    <string name="home_title_meet">ห้องสนทนา</string>
+    <string name="home_enter_room_name">กรอกชื่อห้องสนทนา</string>
+    <string name="home_discription_meet">ใส่ชื่อห้องสนทนาที่ต้องการเข้าร่วม หรือ คูณสามารถสร้างห้องและ\nส่งชื่อห้องให้เพื่อนๆ มาเข้าร่วมก็ได้</string>
+    <string name="home_create_join">สร้างห้องสนทนา/เข้าร่วม</string>
+    <string name="home_menu_calendar">ปฏิทิน</string>
+    <string name="home_menu_recent">รายการล่าสุด</string>
+    <string name="power_by">Powered by</string>
+    <string name="dialog_title">ข้อความ</string>
+    <string name="message_logout">ออกจากระบบ</string>
+    <string name="title_text_today">วันนี้</string>
+    <string name="title_text_yesterday">เมื่อวาน</string>
+    <string name="title_text_earlier">ก่อนหน้า</string>
+    <string name="message_add_event">คุณต้องการเพิ่มกิจกรรมนี้ไปยัง VROOM หรือไม่?</string>
+</resources>

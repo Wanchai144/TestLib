@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.home.ui.home.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/spacing_10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMeet"
+                style="@style/regualar.text_18sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_15dp"
+                android:text="@string/home_title_meet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtRoomName"
+                style="@style/regualar.text_18sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_15dp"
+                android:layout_marginTop="@dimen/spacing_5dp"
+                android:background="@drawable/shape_edt_enter_room"
+                android:hint="@string/home_enter_room_name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/spacing_12dp"
+                android:paddingVertical="@dimen/spacing_12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMeet" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/viewInfoJoinMeet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_15dp"
+                android:layout_marginTop="@dimen/spacing_5dp"
+                android:background="@drawable/shape_edt_enter_room"
+                android:paddingTop="@dimen/spacing_5dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/edtRoomName">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMeetDescription"
+                    style="@style/regualar.text_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_15dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/home_discription_meet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCreateJoin"
+                    style="@style/regualar.text_16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_14dp"
+                    android:layout_marginTop="@dimen/spacing_5dp"
+                    android:layout_marginBottom="@dimen/spacing_10dp"
+                    android:background="@drawable/shape_btn_red_25"
+                    android:enabled="false"
+                    android:paddingHorizontal="@dimen/spacing_20dp"
+                    android:text="@string/home_create_join"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gph_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMeetDescription" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/viewContentRecent"
+                android:name="com.tdg.vroom.view.home.ui.menuRecent.RecentFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/viewMenuBottom"
+                app:layout_constraintTop_toBottomOf="@+id/viewInfoJoinMeet" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/viewContentCalendar"
+                android:name="com.tdg.vroom.view.home.ui.menuCalendar.CalendarFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/viewMenuBottom"
+                app:layout_constraintTop_toBottomOf="@+id/viewInfoJoinMeet" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/viewMenuBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                app:layout_constraintBottom_toTopOf="@+id/viewMenuPowerBy">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewMenuRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:paddingHorizontal="@dimen/spacing_10dp"
+                    android:paddingVertical="@dimen/spacing_12dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivIconRecent"
+                        android:layout_width="@dimen/spacing_25dp"
+                        android:layout_height="@dimen/spacing_25dp"
+                        android:src="@drawable/ic_menu_history"
+                        android:translationX="-50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/gph_white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMenuRecent"
+                        style="@style/adbold.text_20sp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/spacing_10dp"
+                        android:text="@string/home_menu_recent"
+                        android:textColor="@color/gph_white"
+                        android:translationX="-50dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivIconRecent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconRecent"
+                        app:layout_constraintTop_toTopOf="@+id/ivIconRecent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewMenuCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/colorHeaderGray"
+                    android:paddingHorizontal="@dimen/spacing_10dp"
+                    android:paddingVertical="@dimen/spacing_12dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivIconCalendar"
+                        android:layout_width="@dimen/spacing_25dp"
+                        android:layout_height="@dimen/spacing_25dp"
+                        android:src="@drawable/ic_menu_calendar"
+                        android:translationX="-50dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/gph_white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMenuCalendar"
+                        style="@style/adbold.text_20sp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/spacing_10dp"
+                        android:text="@string/home_menu_calendar"
+                        android:textColor="@color/gph_white"
+                        android:translationX="-50dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivIconCalendar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivIconCalendar"
+                        app:layout_constraintTop_toTopOf="@+id/ivIconCalendar" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/viewMenuPowerBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitlePowerBy"
+                    style="@style/adbold.text_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_10dp"
+                    android:text="@string/power_by"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivIconCalendar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivIconCalendar"
+                    app:layout_constraintTop_toTopOf="@+id/ivIconCalendar" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/spacing_50dp"
+                    android:layout_height="@dimen/spacing_40dp"
+                    android:layout_marginStart="@dimen/spacing_5dp"
+                    android:src="@drawable/ic_power_by"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

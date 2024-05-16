@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.home.ui.settings.SettingsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingTop="@dimen/spacing_20dp"
+        android:paddingBottom="@dimen/spacing_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivHome"
+            android:layout_width="@dimen/spacing_30dp"
+            android:layout_height="@dimen/spacing_30dp"
+            android:layout_marginStart="@dimen/spacing_15dp"
+            android:background="@drawable/ic_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/adbold.text_24sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_14dp"
+            android:gravity="center"
+            android:text="@string/title_settings"
+            android:textColor="@color/gph_white"
+            app:layout_constraintBottom_toBottomOf="@+id/ivHome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivHome" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewToolbar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProfile"
+                    style="@style/adbold.text_20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorHeaderGray"
+                    android:paddingHorizontal="@dimen/spacing_14dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/title_settings_profile"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitleDisplayName"
+                    style="@style/adbold.text_14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/spacing_14dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/title_settings_displayname"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtDisplayName"
+                    style="@style/adbold.text_18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_14dp"
+                    android:layout_marginTop="@dimen/spacing_5dp"
+                    android:background="@drawable/shape_edt_bg_gray"
+                    android:paddingHorizontal="@dimen/spacing_8dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/title_settings_displayname"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleDisplayName" />
+
+                <View
+                    android:id="@+id/lineDisplayName"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_marginTop="@dimen/spacing_5dp"
+                    android:background="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDisplayName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitleEmail"
+                    style="@style/adbold.text_14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_5dp"
+                    android:paddingHorizontal="@dimen/spacing_14dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/login_text_email"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/lineDisplayName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtEmail"
+                    style="@style/adbold.text_18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_14dp"
+                    android:layout_marginTop="@dimen/spacing_5dp"
+                    android:background="@drawable/shape_edt_bg_gray"
+                    android:enabled="false"
+                    android:hint="@string/login_text_email"
+                    android:paddingHorizontal="@dimen/spacing_8dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:textColor="@color/colorShapeCircleLanguage"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleEmail" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvConference"
+                    style="@style/adbold.text_20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:background="@color/colorHeaderGray"
+                    android:paddingHorizontal="@dimen/spacing_14dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/title_settings_conference"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewSwitchAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tvConference">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSwitchAudio"
+                        style="@style/adbold.text_22sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/spacing_14dp"
+                        android:paddingVertical="@dimen/spacing_5dp"
+                        android:text="@string/title_settings_switch_audio"
+                        android:textColor="@color/colorBaseText"
+                        app:layout_constraintEnd_toStartOf="@+id/switchAudio"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/switchAudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_10dp"
+                        android:checked="false"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvSwitchAudio"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvSwitchAudio"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:id="@+id/lineSwitchAudio"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:layout_marginTop="@dimen/spacing_5dp"
+                        android:background="@color/colorBaseText"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSwitchAudio" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewSwitchVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/viewSwitchAudio">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSwitchVideo"
+                        style="@style/adbold.text_22sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/spacing_14dp"
+                        android:paddingVertical="@dimen/spacing_5dp"
+                        android:text="@string/title_settings_switch_video"
+                        android:textColor="@color/colorBaseText"
+                        app:layout_constraintEnd_toStartOf="@+id/switchVideo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/switchVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_10dp"
+                        android:checked="false"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvSwitchVideo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvSwitchVideo"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:id="@+id/lineSwitchVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:layout_marginTop="@dimen/spacing_5dp"
+                        android:background="@color/colorBaseText"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSwitchVideo" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewSwitchBattery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/viewSwitchVideo">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSwitchBattery"
+                        style="@style/adbold.text_22sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/spacing_14dp"
+                        android:paddingVertical="@dimen/spacing_5dp"
+                        android:text="@string/title_settings_switch_battery_seving"
+                        android:textColor="@color/colorBaseText"
+                        app:layout_constraintEnd_toStartOf="@+id/switchBattery"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/switchBattery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_10dp"
+                        android:checked="false"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvSwitchBattery"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvSwitchBattery"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLegal"
+                    style="@style/adbold.text_20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:background="@color/colorHeaderGray"
+                    android:paddingHorizontal="@dimen/spacing_14dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/title_settings_legal"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/viewSwitchBattery" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLegal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPrivacy"
+                        style="@style/adbold.text_22sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/spacing_14dp"
+                        android:paddingVertical="@dimen/spacing_5dp"
+                        android:text="@string/title_settings_privacy"
+                        android:textColor="@color/colorBaseText"
+                        app:layout_constraintEnd_toStartOf="@+id/ivLinkPrivacy"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLinkPrivacy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_20dp"
+                        android:checked="false"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvPrivacy"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvPrivacy"
+                        app:srcCompat="@drawable/ic_link"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:id="@+id/linePrivacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:layout_marginTop="@dimen/spacing_5dp"
+                        android:background="@color/colorBaseText"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPrivacy" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/viewTermOfUse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/viewPrivacy">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTermOfUse"
+                        style="@style/adbold.text_22sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/spacing_14dp"
+                        android:paddingVertical="@dimen/spacing_5dp"
+                        android:text="@string/title_settings_term_condition"
+                        android:textColor="@color/colorBaseText"
+                        app:layout_constraintEnd_toStartOf="@+id/ivLinkTerm"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLinkTerm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_20dp"
+                        android:checked="false"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvTermOfUse"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvTermOfUse"
+                        app:srcCompat="@drawable/ic_link"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitleVersion"
+                    style="@style/adbold.text_20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8dp"
+                    android:background="@color/colorHeaderGray"
+                    android:paddingHorizontal="@dimen/spacing_14dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:text="@string/title_settings_version"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/viewTermOfUse" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVersion"
+                    style="@style/adbold.text_18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/spacing_14dp"
+                    android:paddingVertical="@dimen/spacing_5dp"
+                    android:textColor="@color/colorBaseText"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleVersion" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

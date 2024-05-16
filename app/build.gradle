@@ -1,0 +1,179 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+apply plugin: 'com.google.dagger.hilt.android'
+
+
+android {
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.tdg.vroomcanary"
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            // Caution! In production, you need to generate your own keystore file.
+            // see https://facebook.github.io/react-native/docs/signed-apk-android.
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        dev {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            // conference meeting
+            buildConfigField("String", "LIVEKIT_MEET_URL", "\"wss://livekit-dev.truevirtualworld.com\"")
+            buildConfigField("String", "JITSI_MEET_URL", "\"https://vroomoo1-ts2.truevirtualworld.com\"")
+            buildConfigField("String", "LIVEKIT_API_URL", "\"https://vr.truevirtualworld.com/api/\"")
+
+            buildConfigField("String", "BASE_URL", "\"https://vroom-auth-test.truevirtualworld.com/\"")
+            buildConfigField("String", "CLIENT_ID", "\"mobile-odic-proxy\"")
+            buildConfigField("String", "CLIENT_SECERT", "\"c8e25cbf-9e82-4520-9174-27392c62713b\"")
+            buildConfigField("String", "BASE_URL_PACKAGE", "\"https://subscriber-service-ts2.truevirtualworld.com/\"")
+            buildConfigField("String", "BASE_URL_VERION_MEETING", "\"https://new-reservation-api-ts.truevirtualworld.com/conference/\"")
+
+            // web external
+            buildConfigField("String", "BASE_URL_REGISTER", "\"https://vroom-auth-test.truevirtualworld.com/auth/realms/vroom/protocol/openid-connect/auth?client_id=vroom&redirect_uri=https%3A%2F%2Fvroom-ts2.truevirtualworld.com%2Fportal&state=ed245677-eb16-4e3b-8bcc-79e8aa395abd&response_mode=fragment&response_type=code&scope=openid&nonce=842bb955-6e03-41c5-81e6-68d0fd25b0bc&ui_locales\"")
+            buildConfigField("String", "BASE_FORGOT_PASSWORD", "\"https://vroom-auth-test.truevirtualworld.com/auth/realms/vroom/protocol/openid-connect/forgot-credentials?response_type=code&client_id=mobile-oidc-proxy&redirect_uri=https%3A%2F%2Fvroomoo1.truevirtualworld.com%2F&ui_locales\"")
+            buildConfigField("String", "BASE_URL_POLICY", "\"https://www.true.th/true-corporation/site/privacy-policy\"")
+            buildConfigField("String", "BASE_URL_TERM_CONDITION", "\"https://truevirtualworld.com/th/vroom/terms-and-conditions\"")
+            buildConfigField("String", "BASE_URL_PRICING", "\"https://vroom.truevirtualworld.com/portal/subscription/planspricing\"")
+
+        }
+        production {
+            dimension "default"
+            // conference meeting
+            buildConfigField("String", "LIVEKIT_MEET_URL", "\"wss://livekit-dev.truevirtualworld.com\"")
+            buildConfigField("String", "JITSI_MEET_URL", "\"https://vroomoo1-ts2.truevirtualworld.com\"")
+            buildConfigField("String", "LIVEKIT_API_URL", "\"https://vr.truevirtualworld.com/api/\"")
+
+            buildConfigField("String", "BASE_URL", "\"https://vroom-auth.truevirtualworld.com/\"")
+            buildConfigField("String", "CLIENT_ID", "\"mobile-odic-proxy\"")
+            buildConfigField("String", "CLIENT_SECERT", "\"c8e25cbf-9e82-4520-9174-27392c62713b\"")
+            buildConfigField("String", "BASE_URL_PACKAGE", "\"https://subscriber-service-ts2.truevirtualworld.com/\"")
+            buildConfigField("String", "BASE_URL_VERION_MEETING", "\"https://new-reservation-api-ts.truevirtualworld.com/conference/\"")
+
+            // web external
+            buildConfigField("String", "BASE_URL_REGISTER", "\"https://vroom-auth.truevirtualworld.com/auth/realms/vroom/protocol/openid-connect/auth?client_id=vroom&redirect_uri=https%3A%2F%2Fvroom-ts2.truevirtualworld.com%2Fportal&state=ed245677-eb16-4e3b-8bcc-79e8aa395abd&response_mode=fragment&response_type=code&scope=openid&nonce=842bb955-6e03-41c5-81e6-68d0fd25b0bc&ui_locales\"")
+            buildConfigField("String", "BASE_FORGOT_PASSWORD", "\"https://vroom-auth.truevirtualworld.com/auth/realms/vroom/protocol/openid-connect/forgot-credentials?response_type=code&client_id=mobile-oidc-proxy&redirect_uri=https%3A%2F%2Fvroomoo1.truevirtualworld.com%2F&ui_locales\"")
+            buildConfigField("String", "BASE_URL_POLICY", "\"https://www.true.th/true-corporation/site/privacy-policy\"")
+            buildConfigField("String", "BASE_URL_TERM_CONDITION", "\"https://truevirtualworld.com/th/vroom/terms-and-conditions\"")
+
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes = true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // androidX
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // (Java only)
+    implementation("androidx.work:work-runtime:2.8.1")
+
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
+
+    // Jitsi Meet
+    implementation('org.jitsi.react:jitsi-meet-sdk:5.1.0') { transitive = true }
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
+
+    // log api
+    debugImplementation "com.github.chuckerteam.chucker:library:3.4.0"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.4.0"
+
+    //di hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
+    // navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // data base local
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation 'androidx.room:room-rxjava2:2.4.3'
+    implementation "androidx.security:security-crypto:1.0.0-rc02"
+
+    // meet jitsi
+    implementation('org.jitsi.react:jitsi-meet-sdk:5.1.0') { transitive = true }
+
+    // meet livekit
+    implementation "io.livekit:livekit-android:2.1.1"
+    implementation "com.github.lisawray.groupie:groupie:2.10.1"
+    implementation "com.github.lisawray.groupie:groupie-viewbinding:2.10.1"
+
+    // ui
+    implementation "com.github.li-xiaojun:XPopup:2.5.10" //pop up
+    implementation "com.airbnb.android:lottie:3.4.0" // anima
+    implementation 'com.github.bumptech.glide:glide:4.16.0' // image load
+}
+
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            groupId = 'com.github.geek-atif'
+//            artifactId = 'com-atifqamar-customtoast'
+//            version = "1.0"
+//            pom {
+//                description = 'First release'
+//            }
+//        }
+//    }
+//    repositories {
+//        mavenLocal()
+//    }
+//}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="opensans_light">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">@font/opensans_light_webfont</item>
+    </style>
+
+    <style name="opensans_light.text_8sp">
+        <item name="android:textSize">@dimen/text_8sp</item>
+    </style>
+
+    <style name="opensans_light.text_10sp">
+        <item name="android:textSize">@dimen/text_10sp</item>
+    </style>
+
+    <style name="opensans_light.text_12sp">
+        <item name="android:textSize">@dimen/text_12sp</item>
+    </style>
+
+    <style name="opensans_light.text_14sp">
+        <item name="android:textSize">@dimen/text_14sp</item>
+    </style>
+
+    <style name="opensans_light.text_16sp">
+        <item name="android:textSize">@dimen/text_16sp</item>
+    </style>
+
+    <style name="opensans_light.text_18sp">
+        <item name="android:textSize">@dimen/text_18sp</item>
+    </style>
+
+    <style name="opensans_light.text_20sp">
+        <item name="android:textSize">@dimen/text_20sp</item>
+    </style>
+
+    <style name="opensans_light.text_22sp">
+        <item name="android:textSize">@dimen/text_22sp</item>
+    </style>
+
+    <style name="opensans_light.text_24sp">
+        <item name="android:textSize">@dimen/text_24sp</item>
+    </style>
+
+    <style name="opensans_light.text_28sp">
+        <item name="android:textSize">@dimen/text_28sp</item>
+    </style>
+
+    <style name="opensans_light.text_32sp">
+        <item name="android:textSize">@dimen/text_32sp</item>
+    </style>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_15dp"
+    android:paddingHorizontal="@dimen/spacing_10dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvImageName"
+        style="@style/adbold.text_28sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_circle_gray"
+        android:gravity="center"
+        android:textColor="@color/gph_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRoomName"
+        style="@style/adbold.text_20sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_10dp"
+        android:layout_marginEnd="@dimen/spacing_10dp"
+        android:gravity="start"
+        android:text="@string/home_nav_hello"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvImageName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        style="@style/regualar.text_14sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_10dp"
+        android:layout_marginEnd="@dimen/spacing_10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="@string/app_name"
+        android:textColor="@color/colorBaseText"
+        app:layout_constraintEnd_toStartOf="@+id/ivAddMeeting"
+        app:layout_constraintStart_toEndOf="@+id/tvImageName"
+        app:layout_constraintTop_toBottomOf="@+id/tvRoomName" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAddMeeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_5dp"
+        android:src="@drawable/baseline_add_box_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        style="@style/regualar.text_14sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_10dp"
+        android:layout_marginEnd="@dimen/spacing_10dp"
+        android:text="@string/app_name"
+        android:textColor="@color/colorBaseText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivAddMeeting"
+        app:layout_constraintStart_toEndOf="@+id/tvImageName"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

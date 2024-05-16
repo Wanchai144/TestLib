@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/spacing_20dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNavMenu"
+                android:layout_width="@dimen/spacing_30dp"
+                android:layout_height="@dimen/spacing_30dp"
+                android:layout_marginStart="@dimen/spacing_15dp"
+                android:background="@drawable/ic_menu"
+                android:backgroundTint="@color/colorBaseText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="@dimen/spacing_80dp"
+                android:layout_height="@dimen/spacing_30dp"
+                android:layout_marginStart="@dimen/spacing_10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivNavMenu"
+                app:layout_constraintStart_toEndOf="@+id/ivNavMenu"
+                app:layout_constraintTop_toTopOf="@+id/ivNavMenu"
+                app:srcCompat="@drawable/toolbar_logo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMic"
+                android:layout_width="@dimen/spacing_40dp"
+                android:layout_height="@dimen/spacing_40dp"
+                android:layout_marginEnd="@dimen/spacing_15dp"
+                android:background="@drawable/ic_mic_off"
+                app:layout_constraintEnd_toStartOf="@+id/ivCapture"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCapture"
+                android:layout_width="@dimen/spacing_40dp"
+                android:layout_height="@dimen/spacing_40dp"
+                android:layout_marginEnd="@dimen/spacing_15dp"
+                android:background="@drawable/ic_cam_off"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:name="com.tdg.vroom.view.home.ui.home.HomeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_home"
+        app:menu="@menu/activity_main_drawer">
+
+        <include
+            android:id="@+id/icNavBottom"
+            layout="@layout/nav_bottom_home" />
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

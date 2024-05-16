@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/spacing_25dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="@dimen/spacing_70dp"
+        android:layout_height="@dimen/spacing_70dp"
+        android:background="@drawable/shape_circle_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFullName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvFullName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHello"
+        style="@style/adbold.text_20sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_10dp"
+        android:layout_marginEnd="@dimen/spacing_10dp"
+        android:layout_marginBottom="@dimen/spacing_30dp"
+        android:text="@string/home_nav_hello"
+        android:textColor="@color/gph_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFullName"
+        style="@style/adbold.text_20sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_10dp"
+        android:layout_marginEnd="@dimen/spacing_10dp"
+        android:textColor="@color/gph_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvHello" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="0dp"
+        android:layout_height="0.7dp"
+        android:layout_marginStart="@dimen/spacing_10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="@dimen/spacing_10dp"
+        android:background="@color/gph_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPackageName"
+        style="@style/adbold.text_18sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_10dp"
+        android:layout_marginTop="@dimen/spacing_8dp"
+        android:layout_marginEnd="@dimen/spacing_10dp"
+        android:background="@drawable/shape_round_package_name"
+        android:gravity="center"
+        android:textColor="@color/gph_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/viewPackageName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvPackageName,viewLine" />
+</androidx.constraintlayout.widget.ConstraintLayout>
