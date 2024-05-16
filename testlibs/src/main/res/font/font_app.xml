@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <font
+        app:font="@font/opensans_light_webfont"
+        app:fontStyle="normal" />
+
+    <font
+        app:font="@font/truetext_b_online_regular"
+        app:fontStyle="italic" />
+
+    <font
+        app:font="@font/truetext_bo_online_bold"
+        app:fontStyle="normal" />
+
+</font-family>

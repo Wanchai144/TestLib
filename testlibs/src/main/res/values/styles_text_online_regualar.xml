@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="regualar">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">@font/truetext_b_online_regular</item>
+    </style>
+
+    <style name="regualar.text_8sp">
+        <item name="android:textSize">@dimen/text_8sp</item>
+    </style>
+
+    <style name="regualar.text_10sp">
+        <item name="android:textSize">@dimen/text_10sp</item>
+    </style>
+
+    <style name="regualar.text_12sp">
+        <item name="android:textSize">@dimen/text_12sp</item>
+    </style>
+
+    <style name="regualar.text_14sp">
+        <item name="android:textSize">@dimen/text_14sp</item>
+    </style>
+
+    <style name="regualar.text_16sp">
+        <item name="android:textSize">@dimen/text_16sp</item>
+    </style>
+
+    <style name="regualar.text_18sp">
+        <item name="android:textSize">@dimen/text_18sp</item>
+    </style>
+
+    <style name="regualar.text_20sp">
+        <item name="android:textSize">@dimen/text_20sp</item>
+    </style>
+
+    <style name="regualar.text_22sp">
+        <item name="android:textSize">@dimen/text_22sp</item>
+    </style>
+
+    <style name="regualar.text_24sp">
+        <item name="android:textSize">@dimen/text_24sp</item>
+    </style>
+
+    <style name="regualar.text_28sp">
+        <item name="android:textSize">@dimen/text_28sp</item>
+    </style>
+
+    <style name="regualar.text_32sp">
+        <item name="android:textSize">@dimen/text_32sp</item>
+    </style>
+</resources>
