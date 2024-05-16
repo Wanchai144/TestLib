@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.dagger.hilt.android'
+apply plugin: 'maven-publish'
 
 
 android {
@@ -158,20 +159,5 @@ dependencies {
     implementation "com.github.li-xiaojun:XPopup:2.5.10" //pop up
     implementation "com.airbnb.android:lottie:3.4.0" // anima
     implementation 'com.github.bumptech.glide:glide:4.16.0' // image load
+    implementation project(':testlibs')
 }
-
-//publishing {
-//    publications {
-//        maven(MavenPublication) {
-//            groupId = 'com.github.geek-atif'
-//            artifactId = 'com-atifqamar-customtoast'
-//            version = "1.0"
-//            pom {
-//                description = 'First release'
-//            }
-//        }
-//    }
-//    repositories {
-//        mavenLocal()
-//    }
-//}
