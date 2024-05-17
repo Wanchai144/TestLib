@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.plugin.parcelize'
+    id 'maven-publish'
 }
 
 android {
@@ -93,4 +94,18 @@ dependencies {
 //    implementation("io.insert-koin:koin-core:3.5.6")
 //
     implementation "androidx.security:security-crypto:1.0.0-rc02"
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = 'com.github.Wanchai144'
+                artifactId = 'LivekitLib'
+                version = '2.0.0'
+                artifact(bundleReleaseAar)
+            }
+        }
+    }
 }

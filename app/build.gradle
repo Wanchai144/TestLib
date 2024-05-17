@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.dagger.hilt.android'
-//apply plugin: 'maven-publish'
 
 
 android {
@@ -159,19 +158,5 @@ dependencies {
     implementation "com.github.li-xiaojun:XPopup:2.5.10" //pop up
     implementation "com.airbnb.android:lottie:3.4.0" // anima
     implementation 'com.github.bumptech.glide:glide:4.16.0' // image load
-    implementation project(':testlibs')
+//    implementation project(':testlibs')
 }
-//
-//publishing {
-//    publications {
-//        register<MavenPublication>("release") {
-//            groupId = 'com.github.Wanchai144'
-//            artifactId = 'TestLib'
-//            version = '1.0.4'
-//
-//            afterEvaluate {
-//                from(components["release"])
-//            }
-//        }
-//    }
-//}
