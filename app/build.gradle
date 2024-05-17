@@ -76,6 +76,7 @@ android {
             buildConfigField("String", "BASE_FORGOT_PASSWORD", "\"https://vroom-auth.truevirtualworld.com/auth/realms/vroom/protocol/openid-connect/forgot-credentials?response_type=code&client_id=mobile-oidc-proxy&redirect_uri=https%3A%2F%2Fvroomoo1.truevirtualworld.com%2F&ui_locales\"")
             buildConfigField("String", "BASE_URL_POLICY", "\"https://www.true.th/true-corporation/site/privacy-policy\"")
             buildConfigField("String", "BASE_URL_TERM_CONDITION", "\"https://truevirtualworld.com/th/vroom/terms-and-conditions\"")
+            buildConfigField("String", "BASE_URL_PRICING", "\"https://vroom.truevirtualworld.com/portal/subscription/planspricing\"")
 
         }
     }
