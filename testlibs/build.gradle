@@ -103,7 +103,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.Wanchai144'
                 artifactId = 'testlibs'
-                version = '2.0.2'
+                version = '2.0.3'
                 artifact(bundleReleaseAar)
             }
         }
